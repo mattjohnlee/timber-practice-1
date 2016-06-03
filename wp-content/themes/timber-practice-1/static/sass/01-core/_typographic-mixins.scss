@@ -1,0 +1,113 @@
+/* 
+////////////////////////////////////////////////////////////////////////////
+Typographic mixins and extends
+////////////////////////////////////////////////////////////////////////////
+*/
+
+@mixin copy-face {
+  @include font-regular;
+}
+
+@mixin title-face {
+  color: $heading-color;
+}
+
+@mixin link {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    color: $link-color-hover;
+    text-decoration: underline;
+  }
+}
+
+@mixin link-colored-bg {
+  color: $text-color;
+
+  &:hover, &:focus {
+    color: $text-color;
+    text-decoration: underline;
+  }
+}
+
+@mixin heading-link {
+  @include link;
+}
+
+@mixin heading {
+  @include title-face;
+  margin: 0 0 0.25em;
+  line-height: 1.3;
+  clear: both;
+
+  a {
+    @include heading-link;
+  }
+}
+
+
+
+@mixin heading-1 {
+  @include heading;
+  font-size: 2.75em; /* for browsers not supporting rem-based scale */
+}
+
+@mixin heading-2 {
+  @include heading;
+  font-size: 2.25em; /* for browsers not supporting rem-based scale */
+}
+
+@mixin heading-3 {
+  @include heading;
+  font-size: 1.5em; /* for browsers not supporting rem-based scale */
+}
+
+@mixin heading-4 {
+  @include heading;
+  font-size: 1.2em; /* for browsers not supporting rem-based scale */
+}
+
+@mixin heading-5 {
+  @include heading;
+  font-size: 1em; /* for browsers not supporting rem-based scale */
+}
+
+@mixin heading-6 {
+  @include heading;
+  font-size: 0.875em; /* for browsers not supporting rem-based scale */
+}
+
+
+
+
+
+@mixin paragraph {
+  @include copy-face;
+  font-size: 1em; /* for browsers not supporting rem-based scale */
+  line-height: 1.5;
+}
+
+@mixin li {
+  @include paragraph;
+}
+
+@mixin unstyled-list {
+  list-style: none;
+  margin: 0 0 1em;
+}
+
+@mixin caps {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@mixin smallcaps {
+  @include caps;
+  font-size: .8em;
+}
+
+@mixin small {
+  font-size: .8em;
+}
+

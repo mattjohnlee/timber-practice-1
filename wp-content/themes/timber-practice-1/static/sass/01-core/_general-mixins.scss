@@ -1,0 +1,104 @@
+@mixin micro-clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin clearfix {
+  overflow: hidden;
+}
+
+@mixin container($maxwidth: 75rem) {
+  position: relative;
+  margin: auto;
+  max-width: 1200px; /* for browsers that don't do rems */
+  max-width: $maxwidth;
+  padding: 0 $grid_padding;
+  @include clearfix;
+  clear: both;
+}
+
+@mixin divider-top($border-weight:1px, $spacing:1em, $border-color:auto) {
+  padding-top: $spacing/2;
+  border-top: $border-weight solid;
+  margin-top: $spacing;
+  border-color: $border-color;
+}
+
+@mixin divider-right($border-weight:1px, $spacing:1em, $border-color:auto) {
+  padding-right: $spacing/2;
+  border-right: $border-weight solid;
+  margin-right: $spacing;
+  border-color: $border-color;
+}
+
+@mixin divider-bottom($border-weight:1px, $spacing:1em, $border-color:auto) {
+  padding-bottom: $spacing/2;
+  border-bottom: $border-weight solid;
+  margin-bottom: $spacing;
+  border-color: $border-color;
+}
+
+@mixin divider-left($border-weight:1px, $spacing:1em, $border-color:auto) {
+  padding-left: $spacing/2;
+  border-left: $border-weight solid;
+  margin-left: $spacing;
+  border-color: $border-color;
+}
+
+
+@mixin divider-none {
+  padding: 0;
+  border: 0 none;
+  margin: 0;
+}
+
+
+@mixin button {
+    appearance: none;
+    border-radius: 0;
+    @include font-regular;
+    background: $link-color;
+    color: white !important;
+    @include smallcaps;
+    width: auto;
+    cursor: pointer;
+    display: block;
+    padding: $form-padding;
+    border: none;
+
+    &:hover, &:focus {
+      background: $link-color-hover;
+      border: none;
+      text-decoration: none;
+    }
+}
+
+@mixin button-form {
+  @include button;
+  border: 0 none;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+}
+
+@mixin button-disabled {
+  @include button;
+  background: tint($text-color, 90%);
+  &:hover,
+  &:focus {
+    background: tint($text-color, 90%);
+    cursor: default;
+  }
+}
+
+@mixin center-vertical {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  transform: translateX(0) translateY(-50%) translateZ(0);
+}

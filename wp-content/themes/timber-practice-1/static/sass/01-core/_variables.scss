@@ -1,0 +1,154 @@
+/* 
+////////////////////////////////////////////////////////////////////////////
+Color functions -- making up for Compass
+////////////////////////////////////////////////////////////////////////////
+*/ 
+
+// Slightly lighten a color
+@function tint($color, $percentage) {
+  @return mix($color, white, 100%-$percentage);
+}
+
+// Slightly darken a color
+@function shade($color, $percentage) {
+  @return mix($color, black, 100%-$percentage);
+}
+
+
+
+/* 
+////////////////////////////////////////////////////////////////////////////
+Color values -- primary
+////////////////////////////////////////////////////////////////////////////
+*/
+
+$red: red;
+$orange: orange;
+$yellow: yellow;
+$green: green;
+$blue: blue;
+$indigo: indigo;
+$violet: violet;
+
+/* 
+////////////////////////////////////////////////////////////////////////////
+Gray values
+////////////////////////////////////////////////////////////////////////////
+*/
+
+$gray: #262626;
+$gray-light-1: tint($gray, 10%);
+$gray-light-2: tint($gray, 20%);
+$gray-light-3: tint($gray, 30%);
+$gray-light-4: tint($gray, 40%);
+$gray-light-5: tint($gray, 50%);
+$gray-light-6: tint($gray, 60%);
+$gray-light-7: tint($gray, 70%);
+$gray-light-8: tint($gray, 80%);
+$gray-light-9: tint($gray, 90%);
+
+
+
+/* 
+////////////////////////////////////////////////////////////////////////////
+Standard applications of color variables
+////////////////////////////////////////////////////////////////////////////
+*/
+
+$text-color: black; 
+$text-color-subtle: lighten($text-color, 75%); 
+$heading-color: black;
+$caption-color: $gray-light-4;
+
+$link-color: $blue;
+$link-color-hover: $green;
+
+$selection-bg-color: transparentize($link-color, .75);
+$selection-text-color: $text-color;
+
+$error: $red;
+$valid: $green;
+
+$border-color: $gray-light-8;
+$border-color-focus: $gray-light-6;
+$grid-border: 1px solid $gray-light-6;
+
+$background-color: #fff;
+$background-color-subtle: #eee;
+
+$footer-background-color: $gray-light-9;
+$footer-text-color: $text-color;
+
+
+
+/* 
+////////////////////////////////////////////////////////////////////////////
+Layout/spacing variables
+////////////////////////////////////////////////////////////////////////////
+*/
+
+$section-spacing: 2rem;
+$header-tall: 140px;
+$header-short: 70px;
+$form-padding: .75rem;
+
+
+
+
+
+/* 
+////////////////////////////////////////////////////////////////////////////
+Typographic variables
+////////////////////////////////////////////////////////////////////////////
+*/
+
+$sans: Helvetica, Arial, sans-serif;
+$serif: Georgia, 'Times New Roman', serif;
+$display: $sans;
+
+
+@mixin font-regular { 
+	font-family: 'CustomFont', $sans;
+	font-weight:  400;
+	font-style:   normal;
+	font-stretch: normal;
+}
+
+@mixin font-bold { 
+  font-family: 'CustomFont', $sans;
+  font-weight:  700;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@mixin font-italic { 
+  font-family: 'CustomFont', $sans;
+  font-weight:  400;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
+@mixin font-bolditalic { 
+  font-family: 'CustomFont', $sans;
+  font-weight:  700;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
+@mixin font-display { 
+  font-family: 'CustomFont', $sans;
+  font-weight:  300;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@mixin font-displayitalic { 
+  font-family: 'CustomFont', $sans;
+  font-weight:  300;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
+@mixin font-fallback { 
+  font-family: $sans;
+}

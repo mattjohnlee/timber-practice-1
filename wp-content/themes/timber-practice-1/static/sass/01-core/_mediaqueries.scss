@@ -1,0 +1,43 @@
+// ----
+// Media Queries
+// ----
+
+
+$s: 600px;
+$m: 768px;
+$l: 1024px;
+$l2: 1200px;
+$xl: 1400px;
+$nav-breakpoint: $l;
+$container-max-width: 1170px;
+
+
+// http://css-tricks.com/conditional-media-query-mixins/
+$MQs: true;
+
+@mixin breakpoint($point) {
+    @if ($MQs) {
+
+        @if $point == s {
+        	@media (min-width: #{$s}) { @content; }
+        }
+        @else if $point == m {
+        	@media (min-width: #{$m}) { @content; }
+        }
+        @else if $point == l {
+        	@media (min-width: #{$l}) { @content; }
+        }
+        @else if $point == l2 {
+        	@media (min-width: #{$l2}) { @content; }
+        }
+        @else if $point == xl {
+        	@media (min-width: #{$xl}) { @content; }
+        }
+        @else if $point == nav-breakpoint {
+        	@media (min-width: #{$nav-breakpoint}) { @content; }
+        }
+        @else if $point == container-max-width {
+        	@media (min-width: #{$container-max-width}) { @content; }
+        }
+    }
+}

@@ -1,0 +1,91 @@
+/* 
+////////////////////////////////////////////////////////////////////////////
+Styles not specific to any particular site page. Place things like "general" paragraph styles, heading styles, base list styles, etc. here.
+
+If you're calling the container mixin, you can define a custom max-width. Otherwise, the max-width's default value is 81.25em (1300px)
+
+.container {
+  @include container(70em);
+}
+////////////////////////////////////////////////////////////////////////////
+*/
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1em; /* change this for different breakpoints to make a responsive typographic scale */
+}
+
+body {
+  @include copy-face;
+  color: $text-color;
+  position: relative;
+}
+
+::selection {
+  background: $selection-bg-color; 
+  color: $selection-text-color;
+}
+
+::-moz-selection { /* Firefox */
+  background: $selection-bg-color; 
+  color: $selection-text-color;
+}
+
+
+
+
+.container {
+  @include container;
+}
+
+hr {
+  background-color: $gray-light-4;
+  height: 1px;
+  border: none;
+}
+
+.primary {
+  margin-bottom: $section-spacing;
+  clear: both;
+  @include column(12);    
+
+  @include breakpoint(m) {
+    @include column(8);    
+  }
+
+  @include breakpoint(l) {
+    @include column(9);    
+  }
+
+  ul, ol {
+    margin: 0 0 1em 0;
+    li {
+      margin-bottom: 1em;
+    }
+  }
+
+  ol {
+    list-style: decimal;
+  }
+}
+
+.clear-none {
+  clear: none;
+}
+
+.divider-top {
+  @include divider-top;
+}
+.divider-bottom {
+  @include divider-bottom;
+}
+.divider-left {
+  @include divider-left;
+}
+.divider-right {
+  @include divider-right;
+}

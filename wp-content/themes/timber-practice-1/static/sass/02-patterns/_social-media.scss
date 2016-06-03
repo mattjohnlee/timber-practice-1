@@ -1,0 +1,31 @@
+.social-media {
+	@include unstyled-list;
+	margin: 0;
+	
+	li {
+		display: inline-block;
+		font-size: 1.5em;
+		margin: 1em 1em 0 0;
+
+		@include breakpoint(m) {
+			margin: 0 1em 0 0;
+			font-size: 1.15em;
+		}
+
+		@include breakpoint(l) {
+			margin: 0 .75em 0 0;
+			font-size: 1.15em;
+		}
+
+		a {
+			border: 1px solid;
+			text-align: center;
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			padding: .375em;
+			line-height: 1.25; /* keeps the FontAwesome icon centered */
+			border-radius: 50%;
+		}
+	}
+}
