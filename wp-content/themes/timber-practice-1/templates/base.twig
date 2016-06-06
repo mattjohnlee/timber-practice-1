@@ -61,26 +61,22 @@
 			{% endblock %}
 		</header>
 
-		<section id="content" role="main" class="content-wrapper">
-			{% if title %}<h1>{{title}}</h1>{% endif %}
-			<div class="wrapper {{sidebar_class}}">
-				{% block content %}
-					Sorry, no content
-				{% endblock %}
-				{% block newblock %}
-				{% endblock %}
-			</div>
+		<main role="main">
+			{% if title %}<h2>{{title}}</h2>{% endif %}
+			{% block content %}
+				<div class="wrapper {{sidebar_class}}">
+						Sorry, no content
+				</div>
+			{% endblock %}
 			{% if sidebar %}
 				<aside class="layout-sidebar">
 					{{sidebar}}
 				</aside>
 			{% endif %}
-		</section>
+		</main>
 
 		{% block footer %}
-			<footer id="footer">
-				{% include 'footer.twig' %}
-			</footer>
+			{% include 'footer.twig' %}
 			{{ function('wp_footer') }}
 		{% endblock %}
 	</body>
