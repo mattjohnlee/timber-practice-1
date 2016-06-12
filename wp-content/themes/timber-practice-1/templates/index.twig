@@ -1,7 +1,9 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	{% for post in posts %}
+	{% for post in solutions %}
+
+		<!--{{post|print_r}}-->
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 	{% endfor %}
 {% endblock %}
