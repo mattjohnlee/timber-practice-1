@@ -55,7 +55,7 @@ class StarterSite extends TimberSite {
 			'label'                 => 'Solution',
 			'description'           => 'Solution type',
 			'labels'                => $labels,
-			'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', ),
+			'supports'              => array( 'title', 'thumbnail', 'revisions', ),
 			'hierarchical'          => false,
 			'public'                => true,
 			'show_ui'               => true,
