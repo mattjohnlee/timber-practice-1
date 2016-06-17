@@ -84,6 +84,7 @@ class StarterSite extends TimberSite {
 		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
 		$context['solutions'] = Timber::get_posts('post_type=solution');
+		$context['markets'] = Timber::get_posts('post_type=market');
 		return $context;
 	}
 

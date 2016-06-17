@@ -9,4 +9,8 @@
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 	{% endfor %}
 	<h2>Markets We Serve</h2>
+	{% for post in markets %}
+		<!--{{post|print_r}}-->
+		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+	{% endfor %}
 {% endblock %}
