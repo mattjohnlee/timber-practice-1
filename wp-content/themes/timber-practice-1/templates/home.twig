@@ -4,7 +4,7 @@
 	<h2>Innovative and Custom Camera Solutions</h2>
 	<p>Inertia Unlimited is most noted for its super-high-speed camera system, X-Mo Blue; but Inertia offers a wide range of specialty cameras, including the in-track Gophercam of NASCAR fame, Refcam, poker Holecard cam and many robotic cameras. For nearly twenty years our innovative technologies have been featured at major sporting events like the Super Bowl, the Olympics, the Daytona 500, the World Series and the British Open. Our goal is provide the fun cameras, the astounding cameras, the cameras that show more, that reveal new aspects of a sport and get the viewer right in the action. If you don’t see what you need on our website, call anyway.</p>
 	{% for post in solutions %}
-		{{post|print_r}}
+		<!--{{post|print_r}}-->
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 	{% endfor %}
 {% endblock %}
