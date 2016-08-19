@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+
+{% block content %}
+
+<h1>THIS IS THE ARCHIVE</h1>
+
+	{% for post in solutions %}
+		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+	{% endfor %}
+{% endblock %}
+
+{% block newblock %}
+	<h3>{{newcontext}}</h3>
+{% endblock %}
