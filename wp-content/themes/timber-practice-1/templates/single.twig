@@ -12,5 +12,11 @@
 				{{post.body}}
 			</div>
 		</article>
+
+		<ul>
+			{% for sibling in post.siblings %}
+				<li>{{sibling}}</li>
+			{% endfor %}
+		</ul>
 	</div><!-- /content-wrapper -->
 {% endblock %}
