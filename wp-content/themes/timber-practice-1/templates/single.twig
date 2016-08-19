@@ -13,9 +13,10 @@
 			</div>
 		</article>
 
+		<h3>{{post.post_type}}s</h3>
 		<ul>
 			{% for sibling in post.siblings %}
-				<li>{{sibling}}</li>
+				<li><a class="sibling-link" href="{{sibling.get_link}}">{{sibling.title}}</a></li>
 			{% endfor %}
 		</ul>
 	</div><!-- /content-wrapper -->
